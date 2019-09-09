@@ -226,13 +226,13 @@ app.use(async (ctx, next) => {
   if (q.action == 'desc') {
   	out.label = {en: 'Born where'};
   	out.description = {en: "Import missing place of birth from wikipedia to wikidata."};
-  	out.instructions = {en: "*Click \"Accept\" to add a place of birth(P19) claim to the wikidata entity, meanwhile set the wikipedia pages as references.\n" + 
-  	"*Click \"Reject\" to refuse the suggestion.\n*If you're not sure, click \"I don't know\".\n" + 
-  	"*The suggested place of birth comes from wikipedia articles." + 
-  	" There might be error due to outdated wikipedia page snapshots, article parsing error or wrong wikipedia info. Be sure to check the data before you make choice!\n" +
-  	"*The results will prioritize your primary languange (the first language in your user setting).\n" +
-  	"*Bug reports and feedback should be sent to [https://www.wikidata.org/wiki/User:Chaoyuel User:Chaoyuel].\n" +
-		`*Data were collected until ${newestEpoch.epoch}.`};
+  	out.instructions = {en: "*Click \"Accept\" to add a [https://www.wikidata.org/wiki/Property:P19 place of birth(P19)] claim to the wikidata entity, meanwhile add the source wikipedia links to [https://www.wikidata.org/wiki/Property:P4656 Wikimedia import URL] in the claim reference part.\n" + 
+  	"*Click \"Reject\" if the place of birth suggestion appears to be wrong.\n*If you are not sure of what to do, click \"I don't know\".\n" + 
+  	"*Be sure to verify the suggested birth place using the links presented." + 
+		"*Tiles contains a source wikipedia link in your primary language (the first language in your user settings) will be shown first, " +
+		"other tiles are displayed when all tiles in your primary language have been marked.\n" +
+  	"*Bug reports and feedback should be sent to [https://www.wikidata.org/wiki/User:Chaoyuel User:Chaoyuel] or [https://github.com/google/wikiloop-wikidata-game Github].\n" +
+		`*Data was last collected on ${newestEpoch.epoch}.`};
   	out.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/BlankMap-World-820.png/320px-BlankMap-World-820.png';
   	ctx.body = out;
   	ctx.jsonp(out);
