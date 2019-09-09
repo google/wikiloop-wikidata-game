@@ -135,7 +135,7 @@ function generateDisplayData(row) {
 	// missing value section
 	let valueSection = {
 		type: 'html',
-		title: 'Does this person born here?'	
+		title: 'Was this person born here:'	
 	};
 	sections.push(valueSection);	
 	targetID = row.missingValue.replace('http://www.wikidata.org/wiki/', '');
