@@ -108,7 +108,7 @@ async function getWikidataClaims(qNumber) {
 				// process datetime further, get rid of 1990-00-00, 1990-01-00
 				// 1990-00-00 -> 1900
 				// 1990-01-00 -> 1900-01
-				if (dt.length > 0){
+				if (d.length > 0){
 					let d = dt[0];
 					d = d.replace('-00-00', '');
 					d = d.replace('-00', '');
